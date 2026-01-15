@@ -1,0 +1,43 @@
+@import url(./styles/page_style.css);
+
+@font-face {
+  font-family: "Palanquin-Regular";
+  src: url(./assets/fonts/Palanquin-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Palanquin-Regular";
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+footer {
+  background-color: orange;
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
