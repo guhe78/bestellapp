@@ -81,13 +81,15 @@
 }
 
 .menu_content {
-  margin: 0 auto;
-}
-
-.menu_table {
+  background-color: rebeccapurple;
   max-width: var(--content-width);
   margin: 0 auto;
   margin-top: -90px;
+}
+
+.menu_table {
+  background-color: rebeccapurple;
+  display: flex;
 }
 
 .menu_headline {
