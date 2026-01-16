@@ -5,6 +5,26 @@
   src: url(./assets/fonts/Palanquin-Regular.ttf);
 }
 
+@font-face {
+  font-family: "Palanquin-Bold";
+  src: url(./assets/fonts/Palanquin-Bold.ttf);
+}
+
+@font-face {
+  font-family: "PalanquinDark-Regular";
+  src: url(./assets/fonts/PalanquinDark-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PalanquinDark-Bold";
+  src: url(./assets/fonts/PalanquinDark-Bold.ttf);
+}
+
+:root {
+  --bar-color: #e76c1f;
+  --content-width: 1440px;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -15,26 +35,44 @@ body {
 
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
 
-main {
-  max-width: 1440px;
-  margin: 0 auto;
+  min-height: 100vh;
 }
 
 h1 {
   margin: 0;
+  font-family: "PalanquinDark-Regular";
+  font-size: 48px;
+  letter-spacing: 0;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+h2 {
+  font-family: "Palanquin-Bold";
+  font-size: 40px;
+  letter-spacing: 0;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+p {
+  font-family: "Palanquin-Bold";
+  font-size: 24px;
+  letter-spacing: 0;
+  font-weight: 700;
+  line-height: 120%;
 }
 
 ul {
   list-style: none;
   display: flex;
   gap: 32px;
+  padding: 0;
 }
 
 footer {
-  background-color: orange;
+  background-color: var(--bar-color);
   height: 128px;
   display: flex;
   justify-content: center;
