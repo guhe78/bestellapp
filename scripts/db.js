@@ -95,7 +95,7 @@ let menu = {
   extras: {
     id: "extras",
     name: "Extras",
-    categoryIcon: "../assets/images/page_content/",
+    categoryIcon: "empty",
     items: [
       {
         category: "Extras",
@@ -117,7 +117,7 @@ let menu = {
   sideDishes: {
     id: "sidedishes",
     name: "Beilagen",
-    categoryIcon: "../assets/images/page_content/burger_section_header.png",
+    categoryIcon: "empty",
     items: [
       {
         category: "Beilagen",
@@ -139,7 +139,7 @@ let menu = {
   beverages: {
     id: "beverages",
     name: "Getränke",
-    categoryIcon: "../assets/images/page_content/burger_section_header.png",
+    categoryIcon: "empty",
     items: [
       {
         category: "Getränke",
@@ -166,7 +166,7 @@ let menu = {
   deserts: {
     id: "deserts",
     name: "Etwas Süßes",
-    categoryIcon: "../assets/images/page_content/burger_section_header.png",
+    categoryIcon: "empty",
     items: [
       {
         category: "Nachspeisen",

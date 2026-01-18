@@ -81,21 +81,24 @@
 }
 
 .menu_content {
-  background-color: rebeccapurple;
   max-width: var(--content-width);
   margin: 0 auto;
-  margin-top: -90px;
 }
 
 .menu_table {
-  background-color: rebeccapurple;
+  background-color: #fdeadc;
+  border-radius: 16px;
   display: flex;
+  flex-grow: 1;
 }
 
 .menu_headline {
   max-width: var(--content-width);
   display: flex;
   align-items: center;
+
+  margin-top: -90px;
+  padding-left: 48px;
 
   color: white;
 }
@@ -105,6 +108,23 @@
   padding-left: 30px;
 }
 
+.menu_item {
+  display: flex;
+  flex-direction: column;
+  max-width: 860px;
+  gap: 16px;
+  padding: 24px 0px 64px 128px;
+}
+
+.menu_container {
+  display: flex;
+}
+
+.menu_image {
+  width: 200px;
+  padding: 8px;
+}
+
 .footer_content {
   max-width: var(--content-width);
   width: 100%;
@@ -112,4 +132,35 @@
   justify-content: space-evenly;
 
   gap: 50px;
+}
+
+.menu_item_headline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu_item_info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 8px;
+  padding: 8px;
+}
+
+.button_addcart {
+  background: url(../assets/images/buttons/button_default.png);
+  background-size: contain;
+  background-position: center;
+  align-self: flex-end;
+  border-radius: 16px;
+  border: none;
+  width: 100px;
+  height: 30px;
+}
+
+.button_addcart:hover {
+  background: url(../assets/images/buttons/button_hover.png);
+  background-size: contain;
+
+  cursor: pointer;
 }
