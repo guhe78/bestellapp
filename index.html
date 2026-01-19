@@ -47,12 +47,15 @@
       </section>
     </header>
     <main>
-      <article class="menu_content" id="menu_content"></article>
-      <article
-        class="shopping_cart_container"
-        id="shopping_cart_container"
-      ></article>
+      <article class="menu_content" id="menu_content">
+        <section class="dialog_section">
+          <dialog open id="shopping_cart_dialog" class="shopping_cart">
+            <button onclick="closeDialog()">close</button>
+          </dialog>
+        </section>
+      </article>
     </main>
+
     <footer>
       <section class="footer_content">
         <img src="./assets/icons/bestell_app_logo_2.png" alt="" />
