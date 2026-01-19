@@ -82,7 +82,16 @@
 
 .menu_content {
   max-width: var(--content-width);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.menu {
   margin: 0 auto;
+  margin-top: -90px;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu_table {
@@ -93,11 +102,9 @@
 }
 
 .menu_headline {
-  max-width: var(--content-width);
   display: flex;
   align-items: center;
 
-  margin-top: -90px;
   padding-left: 48px;
 
   color: white;
@@ -111,27 +118,20 @@
 .menu_item {
   display: flex;
   flex-direction: column;
-  max-width: 860px;
+  align-items: flex-start;
   gap: 16px;
-  padding: 24px 0px 64px 128px;
+  padding: 24px 24px 64px 24px;
 }
 
 .menu_container {
+  width: 860px;
+  margin: 0 auto;
   display: flex;
 }
 
 .menu_image {
   width: 200px;
   padding: 8px;
-}
-
-.footer_content {
-  max-width: var(--content-width);
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-
-  gap: 50px;
 }
 
 .menu_item_headline {
@@ -148,19 +148,38 @@
 }
 
 .button_addcart {
-  background: url(../assets/images/buttons/button_default.png);
-  background-size: contain;
-  background-position: center;
   align-self: flex-end;
-  border-radius: 16px;
+  background-color: white;
+  font-weight: 600;
+  font-size: 16px;
+  color: #363534;
+  border-radius: 20px;
   border: none;
-  width: 100px;
+  width: 115px;
   height: 30px;
 }
 
 .button_addcart:hover {
-  background: url(../assets/images/buttons/button_hover.png);
-  background-size: contain;
-
   cursor: pointer;
+  color: #e76c1f;
+}
+
+.shopping_cart_container {
+  width: 300px;
+  height: 600px;
+  background-color: rebeccapurple;
+  border-radius: 32px 0 0 32px;
+
+  position: sticky;
+  top: 0;
+  right: 0;
+}
+
+.footer_content {
+  max-width: var(--content-width);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+  gap: 50px;
 }

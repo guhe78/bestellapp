@@ -39,6 +39,16 @@ body {
   min-height: 100vh;
 }
 
+main {
+  max-width: var(--content-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+}
+
 h1 {
   margin: 0;
   font-family: "PalanquinDark-Regular";

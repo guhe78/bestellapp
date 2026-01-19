@@ -13,10 +13,10 @@ function renderMenuTable(category) {
       <img src="${category.items[i].imageUrl}" alt="" class="menu_image" id="menu_image" />
       <div class="menu_item_info">
         <h4 class="menu_item_headline">
-          <span>${category.items[i].name}</span> <span>${category.items[i].price.toFixed(2)} €</span>
+          <span>${category.items[i].name}</span><span>${category.items[i].price.toFixed(2)} €</span>
         </h4>
           <td>${category.items[i].ingredients}</td>
-          <button class="button_addcart" id="add_cart_button"></button>
+          <button class="button_addcart" id="add_cart_button">Add to cart</button>
       </div>
     </section>
     </div>
@@ -31,11 +31,13 @@ function renderMenuTableHead(category) {
 
   menuTable.innerHTML += `
   <div class="section_header_background"></div>
-  <div class="menu_headline">
-  <img src="${icon}" alt="" />
-  <h2 id="category_headline">${headline}</h2>
-  </div>
-  <div class="menu_item" id="menu_item_${category.id}"></div>
+  <article class="menu">
+    <div class="menu_headline">
+      <img src="${icon}" alt="" />
+      <h2 id="category_headline">${headline}</h2>
+    </div>
+    <div class="menu_item" id="menu_item_${category.id}"></div>
+  </article>
   `;
   renderMenuTable(category);
 }
