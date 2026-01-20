@@ -33,10 +33,11 @@
 body {
   font-family: "Palanquin-Regular";
 
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
 
   min-height: 100vh;
+
+  overflow-x: hidden;
 }
 
 h1 {
@@ -69,6 +70,17 @@ ul {
   display: flex;
   gap: 32px;
   padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 footer {

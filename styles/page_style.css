@@ -63,7 +63,9 @@
 
 .aot_image {
   max-width: var(--content-width);
-  background-size: cover;
+  height: auto;
+  background-size: contain;
+  object-fit: cover;
 }
 
 .aot_headline img {
@@ -82,19 +84,23 @@
 .section_header_background {
   background-color: var(--bar-color);
 
-  width: 100vw;
+  width: 150vw;
   position: relative;
+  left: 50%;
+  transform: translate(-50%);
   z-index: -1;
   height: 60px;
 }
 
-.menu {
-  max-width: var(--content-width);
-  margin: 0 auto;
-  margin-top: -90px;
+.menu_section {
+  max-width: 860px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu_headline {
+  margin-top: -90px;
   display: flex;
   align-items: center;
 
@@ -109,7 +115,6 @@
 }
 
 .menu_item {
-  max-width: var(--content-width);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -117,10 +122,8 @@
 }
 
 .menu_container {
-  max-width: 860px;
   background-color: #fdeadc;
   border-radius: 16px;
-  flex-grow: 1;
   display: flex;
 }
 
@@ -137,7 +140,7 @@
 .menu_item_info {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex-grow: 1;
   gap: 8px;
   padding: 8px;
 }
@@ -159,12 +162,32 @@
   color: #e76c1f;
 }
 
-.shopping_cart {
-  width: 300px;
+.shopping_cart_section {
+  flex: 1;
+  max-width: 300px;
   height: 600px;
-  background-color: rebeccapurple;
-  border-radius: 32px 0 0 32px;
+  background-color: #363534;
+  border-radius: 30px 0 0 30px;
   border: none;
+
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shopping_cart_open_button {
+  display: none;
+  border: none;
+  border-radius: 12px;
+  padding: 4px 8px;
+  margin: 16px;
+}
+
+.shopping_cart_open {
+  top: 0;
 }
 
 .footer_content {
@@ -174,4 +197,40 @@
   justify-content: space-evenly;
 
   gap: 50px;
+}
+
+@media (max-width: 1200px) {
+  .menu_section {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .menu_section {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu_section {
+    max-width: 680px;
+  }
+
+  .shopping_cart_open_button {
+    display: inline;
+  }
+
+  .shopping_cart_section {
+    transform: translateY(70px);
+    position: sticky;
+    bottom: 0;
+
+    max-width: 860px;
+    border-radius: 16px 16px 0 0;
+  }
 }

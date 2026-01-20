@@ -51,13 +51,11 @@ function renderMenuTableHead(category) {
 
   menuTable.innerHTML += `
   <div class="section_header_background"></div>
-        <article class="menu">
           <div class="menu_headline">
             <img src="${icon}" alt="" />
             <h2 id="category_headline">${headline}</h2>
           </div>
           <div class="menu_item" id="menu_item_${category.id}"></div>
-        </article>
   `;
   renderMenuTable(category);
 }
@@ -69,7 +67,8 @@ renderMenu(menu.extras);
 renderMenu(menu.deserts);
 renderMenu(menu.beverages);
 
-function renderAddShoppingCartButton() {
-  let button = document.getElementById("add_cart_button");
-  button.innerHTML = `<img src="./assets/images/buttons/button_default.o"`;
+function onToggleShoppingCart() {
+  document
+    .getElementById("shopping_cart_section")
+    .classList.toggle("shopping_cart_open");
 }

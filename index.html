@@ -47,13 +47,17 @@
       </section>
     </header>
     <main>
-      <article class="menu_content" id="menu_content">
-        <section class="dialog_section">
-          <dialog open id="shopping_cart_dialog" class="shopping_cart">
-            <button onclick="closeDialog()">close</button>
-          </dialog>
-        </section>
-      </article>
+      <section class="menu_section" id="menu_content"></section>
+      <section class="shopping_cart_section">
+        <button
+          class="shopping_cart_open_button"
+          onclick="onToggleShoppingCart()"
+        >
+          Warenkorb
+        </button>
+        <h2>Your Basket</h2>
+        <button onclick="closeDialog()">close</button>
+      </section>
     </main>
 
     <footer>
