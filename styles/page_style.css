@@ -129,6 +129,9 @@
 
 .menu_image {
   width: 200px;
+  height: 125px;
+  object-fit: cover;
+  border-radius: 24px;
   padding: 8px;
 }
 
@@ -164,18 +167,24 @@
 
 .shopping_cart_section {
   flex: 1;
-  max-width: 300px;
-  height: 600px;
+  max-width: 350px;
+  max-height: 540px;
+  padding: 16px;
   background-color: #363534;
   border-radius: 30px 0 0 30px;
   border: none;
 
   position: sticky;
-  top: 0;
+  top: 12px;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+}
+
+.shopping_cart_section h2 {
+  color: white;
 }
 
 .shopping_cart_open_button {
@@ -188,6 +197,63 @@
 
 .shopping_cart_open {
   top: 0;
+}
+
+.shopping_items_container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.shopping_cart_item {
+  width: 240px;
+  background-color: #fdeadc;
+  border-radius: 20px;
+  padding: 12px;
+  margin: 8px;
+  gap: 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping_cart_item p {
+  font-size: 22px;
+}
+
+.bill_container {
+  width: 260px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons_price_container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amount_buttons_bill {
+  display: flex;
+  justify-content: center;
+  height: 29px;
+}
+
+.amount_buttons_bill button {
+  border: none;
+}
+
+.amount_buttons_bill img {
+  height: 18px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.bill_container h4,
+h3 {
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer_content {
@@ -232,5 +298,24 @@
 
     max-width: 860px;
     border-radius: 16px 16px 0 0;
+  }
+}
+@media (max-width: 680px) {
+  .menu_section {
+    max-width: 480px;
+  }
+
+  .aot_headline p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu_section {
+    max-width: 300px;
+  }
+
+  .menu_container {
+    flex-direction: column;
   }
 }

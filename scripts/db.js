@@ -1,28 +1,32 @@
-let menu = {
-  burger: {
+let menu = [
+  {
     id: "burger",
     name: "Burger",
     categoryIcon: "../assets/images/page_content/burger_section_header.png",
     items: [
       {
+        id: "burger_beef_red",
         name: "Beef Red",
         ingredients: ["Rindfleisch", "Tomatensoße", "Gurke"],
         price: 5.9,
         imageUrl: "./assets/images/food/burger/beefred_burger.png",
       },
       {
+        id: "burger_all_meat",
         name: "All Meat",
         ingredients: ["Rindfleisch", "Tomatensoße", "Gurke"],
         price: 5.9,
         imageUrl: "./assets/images/food/burger/meat_burger.png",
       },
       {
+        id: "burger_big_chicken",
         name: "Big Chicken",
         ingredients: ["Rindfleisch", "Tomatensoße", "Gurke"],
         price: 5.9,
         imageUrl: "./assets/images/food/burger/chicken_burger.png",
       },
       {
+        id: "burger_veggie_mushrooms",
         name: "Veggie Mushrooms",
         ingredients: ["Champignons", "Tomatensoße", "Gurke"],
         price: 5.9,
@@ -30,30 +34,34 @@ let menu = {
       },
     ],
   },
-  pizza: {
+  {
     id: "pizza",
     name: "Pizza",
     categoryIcon: "../assets/images/page_content/pizza_section_header.png",
     items: [
       {
+        id: "pizza_margherita",
         name: "Margherita",
         ingredients: ["Käse", "Tomatensoße"],
         price: 8.9,
         imageUrl: "./assets/images/food/pizza/margherita_pizza.png",
       },
       {
-        name: "Chorizo",
+        id: "pizza_salami",
+        name: "Salami",
         ingredients: ["Käse", "Tomatensoße", "Salami"],
         price: 9.9,
-        imageUrl: "./assets/images/food/pizza/chorizo_pizza.png",
+        imageUrl: "./assets/images/food/pizza/salami_pizza.png",
       },
       {
+        id: "pizza_funghi",
         name: "Funghi",
-        ingredients: ["Käse", "Tomatensoße", "Hinterschinken"],
+        ingredients: ["Käse", "Tomatensoße", "Pilze"],
         price: 9.9,
         imageUrl: "./assets/images/food/pizza/funghi_pizza.png",
       },
       {
+        id: "pizza_formaggi",
         name: "Formaggi",
         ingredients: ["Käse", "mehr Käse", "noch mehr Käse", "Tomatensoße"],
         price: 10.9,
@@ -61,133 +69,118 @@ let menu = {
       },
     ],
   },
-  salad: {
+  {
     id: "salad",
     name: "Salat",
     categoryIcon: "../assets/images/page_content/salad_section_header.png",
     items: [
       {
+        id: "salad_rote_beete",
         name: "Möhre-Rote Beete Mix",
         ingredients: ["Feldsalat", "Möhren", "Rote Beete"],
         price: 6.9,
         imageUrl: "./assets/images/food/salad/beef_arugula_salad.png",
       },
       {
-        name: "Möhre-Rote Beete Mix",
-        ingredients: ["Feldsalat", "Möhren", "Rote Beete"],
+        id: "salad_green_mix",
+        name: "Green Mix",
+        ingredients: ["Feldsalat", "Eisbergsalat", "Spinat"],
         price: 6.9,
         imageUrl: "./assets/images/food/salad/mini_green_salad.png",
       },
       {
-        name: "Möhre-Rote Beete Mix",
-        ingredients: ["Feldsalat", "Möhren", "Rote Beete"],
+        id: "salad_spicy_green",
+        name: "Spicy Green Mix",
+        ingredients: ["Feldsalat", "Chili", "Zwiebeln"],
         price: 6.9,
         imageUrl: "./assets/images/food/salad/sea_food_salad.png",
       },
       {
-        name: "Möhre-Rote Beete Mix",
-        ingredients: ["Feldsalat", "Möhren", "Rote Beete"],
+        id: "salad_all_meat",
+        name: "All Meat",
+        ingredients: ["Fleisch", "Remoulade", "Paprika"],
         price: 6.9,
         imageUrl: "./assets/images/food/salad/tofu_salad.png",
       },
     ],
   },
-  extras: {
-    id: "extras",
-    name: "Extras",
-    categoryIcon: "empty",
-    items: [
-      {
-        category: "Extras",
-        name: "Ziebeln",
-        price: 1,
-      },
-      {
-        category: "Extras",
-        name: "Käse",
-        price: 1.5,
-      },
-      {
-        category: "Extras",
-        name: "Knoblauch",
-        price: 0.5,
-      },
-    ],
-  },
-  sideDishes: {
+  {
     id: "sidedishes",
     name: "Beilagen",
-    categoryIcon: "empty",
+    categoryIcon: "../assets/images/page_content/burger_section_header.png",
     items: [
       {
-        category: "Beilagen",
+        id: "sidedishes_fries",
         name: "Pommes Frites",
+        ingredients: ["Pommes Frites", "Ketchup"],
         price: 2.5,
+        imageUrl: "./assets/images/food/sidedishes/fries_sidedish.jpg",
       },
       {
-        category: "Extras",
+        id: "sidedishes_potato",
         name: "Ofenkartoffel",
+        ingredients: ["Kartoffel", "Remoulade"],
         price: 2.0,
+        imageUrl: "./assets/images/food/sidedishes/potato_sidedish.jpg",
       },
       {
-        category: "Extras",
-        name: "Gemischter Salat",
+        id: "siedishes_onionrings",
+        name: "Zwiebelringe",
+        ingredients: ["Zwiebelringe", "Remoulade"],
         price: 3.0,
+        imageUrl: "./assets/images/food/sidedishes/onionrings_sidedish.jpg",
       },
     ],
   },
-  beverages: {
-    id: "beverages",
+  {
+    id: "softdrinks",
     name: "Getränke",
-    categoryIcon: "empty",
+    categoryIcon: "../assets/images/page_content/burger_section_header.png",
     items: [
       {
-        category: "Getränke",
+        id: "softdrinks_cola",
         name: "Cola",
+        ingredients: ["Coca Cola"],
         price: 1.5,
+        imageUrl: "./assets/images/food/softdrinks/cocacola_softdrink.jpg",
       },
       {
-        category: "Getränke",
+        id: "softdrinks_limo",
         name: "Orangenlimonade",
+        ingredients: ["Fanta"],
         price: 1.5,
+        imageUrl: "./assets/images/food/softdrinks/fanta_softdrink.jpg",
       },
       {
-        category: "Getränke",
+        id: "softdrinks_fritz_cola",
         name: "Fritz Cola",
+        ingredients: ["Fritz Cola"],
         price: 1.5,
-      },
-      {
-        category: "Getränke",
-        name: "Selter",
-        price: 1.0,
+        imageUrl: "./assets/images/food/softdrinks/fritz_softdrink.jpg",
       },
     ],
   },
-  deserts: {
+  {
     id: "deserts",
     name: "Etwas Süßes",
-    categoryIcon: "empty",
+    categoryIcon: "../assets/images/page_content/burger_section_header.png",
     items: [
       {
-        category: "Nachspeisen",
+        id: "deserts_chocolate_icecream",
         name: "Schokoladeneis",
+        ingredients: ["Schokoladeneis"],
         price: 1.5,
+        imageUrl: "./assets/images/food/deserts/chocolate_icecream_desert.jpg",
       },
       {
-        category: "Nachspeisen",
-        name: "Vanilleeis",
-        price: 1.5,
-      },
-      {
-        category: "Nachspeisen",
+        id: "deserts_chocolate_muffin",
         name: "Schokomuffin",
+        ingredients: ["Schokomuffin"],
         price: 2.0,
-      },
-      {
-        category: "Nachspeisen",
-        name: "Vanillemuffin",
-        price: 2.0,
+        imageUrl: "./assets/images/food/deserts/chocolate_muffin.jpg",
       },
     ],
   },
-};
+];
+
+let shoppingCart = [];

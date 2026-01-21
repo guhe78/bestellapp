@@ -20,6 +20,11 @@
   src: url(./assets/fonts/PalanquinDark-Bold.ttf);
 }
 
+@font-face {
+  font-family: "Palanquin-SemiBold";
+  src: url(./assets/fonts/Palanquin-SemiBold.ttf);
+}
+
 :root {
   --bar-color: #e76c1f;
   --content-width: 1440px;
@@ -55,6 +60,18 @@ h2 {
   letter-spacing: 0;
   font-weight: 700;
   line-height: 120%;
+}
+
+h3 {
+  font-family: "Palanquin-Bold";
+  font-size: 22px;
+  font-weight: 700;
+}
+
+h4 {
+  font-family: "Palanquin-SemiBold";
+  font-size: 20px;
+  font-weight: 600;
 }
 
 p {

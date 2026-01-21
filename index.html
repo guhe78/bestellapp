@@ -13,7 +13,7 @@
       type="image/x-icon"
     />
   </head>
-  <body>
+  <body onload="renderMenu()">
     <header>
       <section class="aot_section">
         <div class="header_background">
@@ -56,7 +56,13 @@
           Warenkorb
         </button>
         <h2>Your Basket</h2>
-        <button onclick="closeDialog()">close</button>
+        <section class="menu">
+          <div
+            class="shopping_items_container"
+            id="shopping_items_container"
+          ></div>
+        </section>
+        <div class="bill_container" id="bill_container"></div>
       </section>
     </main>
 
