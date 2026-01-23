@@ -40,18 +40,29 @@ function getMenuTableTemplate(item) {
     `;
 }
 
-function getShoppingCartTemplate() {
+function getShoppingCartTemplate(item) {
   return `
      <div class="shopping_cart_item">
-        <p>${shoppingCart[i].quantity}x ${shoppingCart[i].name}</p>
+        <p>${item.quantity}x ${item.name}</p>
         <div class="buttons_price_container">
           <span class="amount_buttons_bill">
             <img src="./assets/images/page_content/buttons/trash.png" alt="" onclick="deleteShoppingCartItem(${i})" />
-            <button onclick="decreaseQuantity(${[i]})">-1</button>
-            <button onclick="increaseQuantity(${[i]})">+1</button>
+            <button onclick="decreaseQuantity(${item})">-1</button>
+            <button onclick="increaseQuantity(${item})">+1</button>
           </span>
-          <p>${(shoppingCart[i].quantity * shoppingCart[i].price).toFixed(2)} €</p>
+          <p>${(item.quantity * item.price).toFixed(2)} €</p>
         </div>
       </div>
+    `;
+}
+
+function getMenuTableHeadTemplate(menu) {
+  return `
+    <div class="section_header_background"></div>
+    <div class="menu_headline">
+    <img src="${menu.categoryIcon}" alt="" />
+    <h2 id="category_headline">${menu.name}</h2>
+    </div>
+    <div class="menu_item" id="menu_item_${menu.id}"></div>
     `;
 }

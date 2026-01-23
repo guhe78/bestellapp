@@ -97,7 +97,6 @@ main {
   max-width: var(--content-width);
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
 }
 
 footer {

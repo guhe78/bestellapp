@@ -16,14 +16,7 @@ function renderMenuTableHead(menu) {
   let menuTable = document.getElementById("menu_content");
 
   for (let i = 0; i < menu.length; i++) {
-    menuTable.innerHTML += `
-    <div class="section_header_background"></div>
-    <div class="menu_headline">
-    <img src="${menu[i].categoryIcon}" alt="" />
-    <h2 id="category_headline">${menu[i].name}</h2>
-    </div>
-    <div class="menu_item" id="menu_item_${menu[i].id}"></div>
-    `;
+    menuTable.innerHTML += getMenuTableHeadTemplate(menu[i]);
     renderMenuTable(menu[i]);
   }
 }
@@ -70,7 +63,7 @@ function renderShoppingCart() {
   shoppingCartContainer.innerHTML = "";
 
   for (let i = 0; i < shoppingCart.length; i++) {
-    shoppingCartContainer.innerHTML += getShoppingCartTemplate();
+    shoppingCartContainer.innerHTML += getShoppingCartTemplate(shoppingCart[i]);
   }
 
   renderBill();
