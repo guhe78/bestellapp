@@ -23,10 +23,8 @@ function getMenuTableTemplate(item) {
                 id="menu_image"
               />
               <div class="menu_item_info">
-                <h4 class="menu_item_headline">
-                  <span>${item.name}</span
-                  ><span>${item.price.toFixed(2)} €</span>
-                </h4>
+                  <h4 class="menu_item_headline">${item.name}</h4
+                  ><h4 class="menu_item_headline menu_price">${item.price.toFixed(2)} €</h4>
                 <td>${item.ingredients}</td>
                 <button
                   class="button_addcart"
