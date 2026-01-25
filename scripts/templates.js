@@ -44,7 +44,7 @@ function getShoppingCartTemplate(item) {
         <p>${item.quantity}x ${item.name}</p>
         <div class="buttons_price_container">
           <span class="amount_buttons_bill">
-            <img src="./assets/images/page_content/buttons/trash.png" alt="" onclick="deleteShoppingCartItem(${i})" />
+            <img src="./assets/images/page_content/buttons/trash.png" alt="" onclick="deleteShoppingCartItem(${item.name})" />
             <button onclick="decreaseQuantity(${item})">-1</button>
             <button onclick="increaseQuantity(${item})">+1</button>
           </span>

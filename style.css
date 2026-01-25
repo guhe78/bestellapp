@@ -27,6 +27,7 @@
 
 :root {
   --bar-color: #e76c1f;
+  --shopping-cart-color: #363534;
   --content-width: 1440px;
 }
 
@@ -99,7 +100,6 @@ main {
 }
 
 footer {
-  background-color: var(--bar-color);
   height: 128px;
   display: flex;
   justify-content: center;
