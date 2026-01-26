@@ -6,7 +6,9 @@
     <script src="./scripts/templates.js"></script>
     <script src="./scripts/db.js"></script>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./styles/standard_style.css" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/responsive_style.css" />
     <title>Bestellapp</title>
     <link
       rel="shortcut icon"
@@ -50,12 +52,6 @@
     <main>
       <section class="menu_section" id="menu_content"></section>
       <section class="shopping_cart_section">
-        <button
-          class="shopping_cart_open_button"
-          onclick="onToggleShoppingCart()"
-        >
-          Warenkorb
-        </button>
         <h2>Your Basket</h2>
         <section class="menu">
           <div
@@ -65,18 +61,36 @@
         </section>
         <div class="bill_container" id="bill_container"></div>
       </section>
+      <dialog class="shopping_cart_mobile"></dialog>
     </main>
 
     <footer>
       <section class="footer_content">
-        <img src="./assets/icons/bestell_app_logo_2.png" alt="" />
         <ul>
-          <li>&copy 2026</li>
+          <li>&copy 2026 BurgerBude</li>
           <li>Imprint</li>
           <li>Cookies</li>
         </ul>
       </section>
-      <section class="footer_content_mobil"></section>
+      <section class="footer_content_mobile">
+        <img
+          src="./assets/icons/footer-mobile/home.png"
+          alt="home symbol a tiny house"
+        />
+        <img
+          src="./assets/icons/footer-mobile/profile.png"
+          alt="profile symbol human"
+        />
+        <img
+          src="./assets/icons/footer-mobile/orders.png"
+          alt="orders symbol menu with little fork"
+        />
+        <img
+          src="./assets/icons/footer-mobile/basket.png"
+          alt="basket symbol little shopping cart"
+          onclick=""
+        />
+      </section>
     </footer>
   </body>
 </html>

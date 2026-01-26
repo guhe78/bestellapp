@@ -1,5 +1,6 @@
 function renderMenu() {
   renderMenuTableHead(menu);
+  renderBill();
 }
 
 function renderMenuTable(category) {
@@ -63,7 +64,7 @@ function renderShoppingCart() {
   shoppingCartContainer.innerHTML = "";
 
   for (let i = 0; i < shoppingCart.length; i++) {
-    shoppingCartContainer.innerHTML += getShoppingCartTemplate(shoppingCart[i]);
+    shoppingCartContainer.innerHTML += getShoppingCartTemplate(i);
   }
 
   renderBill();
@@ -79,7 +80,7 @@ function renderBill() {
     price += shoppingCart[i].quantity * shoppingCart[i].price;
   }
 
-  if (price > 20) {
+  if (price > 20 || shoppingCart.length == 0) {
     fee = 0;
   }
 

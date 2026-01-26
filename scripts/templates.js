@@ -38,17 +38,18 @@ function getMenuTableTemplate(item) {
     `;
 }
 
-function getShoppingCartTemplate(item) {
+function getShoppingCartTemplate(indexNumber) {
   return `
      <div class="shopping_cart_item">
-        <p>${item.quantity}x ${item.name}</p>
+        <p>${shoppingCart[indexNumber].quantity}x ${shoppingCart[indexNumber].name}</p>
         <div class="buttons_price_container">
           <span class="amount_buttons_bill">
-            <img src="./assets/images/page_content/buttons/trash.png" alt="" onclick="deleteShoppingCartItem(${item.name})" />
-            <button onclick="decreaseQuantity(${item})">-1</button>
-            <button onclick="increaseQuantity(${item})">+1</button>
+            <img src="./assets/images/page_content/buttons/trash.png" alt="" 
+              onclick="deleteShoppingCartItem(${indexNumber})" />
+            <button onclick="decreaseQuantity(${indexNumber})">-1</button>
+            <button onclick="increaseQuantity(${indexNumber})">+1</button>
           </span>
-          <p>${(item.quantity * item.price).toFixed(2)} €</p>
+          <p>${(shoppingCart[indexNumber].quantity * shoppingCart[indexNumber].price).toFixed(2)} €</p>
         </div>
       </div>
     `;
@@ -57,10 +58,10 @@ function getShoppingCartTemplate(item) {
 function getMenuTableHeadTemplate(menu) {
   return `
     <div class="section_header_background"></div>
-    <div class="menu_headline">
-    <img src="${menu.categoryIcon}" alt="" />
-    <h2 id="category_headline">${menu.name}</h2>
-    </div>
+      <div class="menu_headline">
+        <img src="${menu.categoryIcon}" alt="" />
+        <h2 id="category_headline">${menu.name}</h2>
+      </div>
     <div class="menu_item" id="menu_item_${menu.id}"></div>
     `;
 }
