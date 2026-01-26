@@ -10,7 +10,7 @@ function getBillTemplate(price, totalPrice, fee) {
     <h3>
       <span>Total</span> <span>${totalPrice.toFixed(2)} €</span>
     </h3>
-    <button>Buy now (${totalPrice.toFixed(2)} €)</button>`;
+    <button class="buy_now"><h3>Buy now (${totalPrice.toFixed(2)} €)</h3></button>`;
 }
 
 function getMenuTableTemplate(item) {
