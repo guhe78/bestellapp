@@ -61,9 +61,22 @@
         </section>
         <div class="bill_container" id="bill_container"></div>
       </section>
-      <dialog class="shopping_cart_mobile"></dialog>
+      <dialog
+        class="shopping_cart_dialog"
+        id="shopping_cart_dialog"
+        onclick="onCloseShoppingCart(event)"
+      >
+        <div class="shopping_cart_section_mobile" id="dialog_content_section">
+          <div class="header_mobile">
+            <button class="dialog_close" onclick="dialog.close()">
+              <img src="./assets/icons/close.png" alt="" />
+            </button>
+            <h2>Your Basket</h2>
+          </div>
+        </div>
+        <div class="bill_container_mobile" id="bill_container_mobile"></div>
+      </dialog>
     </main>
-
     <footer>
       <section class="footer_content">
         <ul>
@@ -85,11 +98,15 @@
           src="./assets/icons/footer-mobile/orders.png"
           alt="orders symbol menu with little fork"
         />
-        <img
-          src="./assets/icons/footer-mobile/basket.png"
-          alt="basket symbol little shopping cart"
-          onclick=""
-        />
+        <div>
+          <img
+            src="./assets/icons/footer-mobile/basket.png"
+            alt="basket symbol little shopping cart"
+            onclick="onOpenShoppingCart()"
+          /><span class="shopping_cart_amount" id="shopping_cart_amount"
+            >0</span
+          >
+        </div>
       </section>
     </footer>
   </body>

@@ -1,3 +1,5 @@
+let dialog = document.getElementById("shopping_cart_dialog");
+
 function renderMenu() {
   renderMenuTableHead(menu);
   renderBill();
@@ -61,17 +63,26 @@ function renderShoppingCart() {
   let shoppingCartContainer = document.getElementById(
     "shopping_items_container",
   );
+  let shoppingCartDialogContainer = document.getElementById(
+    "dialog_content_section",
+  );
+
   shoppingCartContainer.innerHTML = "";
+  shoppingCartDialogContainer.innerHTML = "";
 
   for (let i = 0; i < shoppingCart.length; i++) {
     shoppingCartContainer.innerHTML += getShoppingCartTemplate(i);
+    shoppingCartDialogContainer.innerHTML += getShoppingCartTemplate(i);
   }
 
   renderBill();
+  getShoppingCartLength();
 }
 
 function renderBill() {
   let billContainer = document.getElementById("bill_container");
+  let billContainerDialog = document.getElementById("bill_container_mobile");
+
   let fee = 4.9;
   let price = 0;
   let totalPrice = 0;
@@ -87,4 +98,31 @@ function renderBill() {
   totalPrice = price + fee;
 
   billContainer.innerHTML = getBillTemplate(price, totalPrice, fee);
+  billContainerDialog.innerHTML = getBillTemplate(price, totalPrice, fee);
+}
+
+function onOpenShoppingCart() {
+  dialog.showModal();
+  dialog.classList.add("opened");
+  document.body.classList.add("no_scroll");
+}
+
+function onCloseShoppingCart(event) {
+  if (event.target == dialog) {
+    dialog.close();
+    document.body.classList.remove("no_scroll");
+  }
+}
+
+function getShoppingCartLength() {
+  let shoppingCartAmount = document.getElementById("shopping_cart_amount");
+  let quantity = 0;
+
+  for (let i = 0; i < shoppingCart.length; i++) {
+    if (shoppingCart[i].quantity > 1) {
+      quantity += shoppingCart[i].quantity - 1;
+    }
+  }
+
+  shoppingCartAmount.innerHTML = shoppingCart.length + quantity;
 }
