@@ -10,7 +10,9 @@ function getBillTemplate(price, totalPrice, fee) {
     <h3>
       <span>Total</span> <span>${totalPrice.toFixed(2)} €</span>
     </h3>
-    <button class="buy_now"><h3>Buy now (${totalPrice.toFixed(2)} €)</h3></button>`;
+    <button class="buy_now" onclick="orderConfirmed(event)">
+      <h3>Buy now (${totalPrice.toFixed(2)} €)</h3>
+    </button>`;
 }
 
 function getMenuTableTemplate(item) {
@@ -57,11 +59,12 @@ function getShoppingCartTemplate(indexNumber) {
 
 function getMenuTableHeadTemplate(menu) {
   return `
-    <div class="section_header_background"></div>
+    <div class="headline_background">
       <div class="menu_headline">
         <img src="${menu.categoryIcon}" alt="" />
         <h2 id="category_headline">${menu.name}</h2>
       </div>
+    </div>
     <div class="menu_item" id="menu_item_${menu.id}"></div>
     `;
 }

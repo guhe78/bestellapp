@@ -101,17 +101,24 @@ function renderBill() {
   billContainerDialog.innerHTML = getBillTemplate(price, totalPrice, fee);
 }
 
-function onOpenShoppingCart() {
-  dialog.showModal();
-  dialog.classList.add("opened");
-  document.body.classList.add("no_scroll");
+function toggleShoppingCart() {
+  document
+    .getElementById("shopping_cart_mobile")
+    .classList.toggle("resp_menu_closed");
 }
 
 function onCloseShoppingCart(event) {
-  if (event.target == dialog) {
+  if (event.target == dialog || event.target == button) {
     dialog.close();
     document.body.classList.remove("no_scroll");
   }
+}
+
+function orderConfirmedDialog(event) {
+  let orderConfirmed = document.getElementById("order_confirmed");
+  orderConfirmed.showModal();
+  orderConfirmed.classList.add("opened");
+  onCloseShoppingCart(event);
 }
 
 function getShoppingCartLength() {
@@ -119,10 +126,8 @@ function getShoppingCartLength() {
   let quantity = 0;
 
   for (let i = 0; i < shoppingCart.length; i++) {
-    if (shoppingCart[i].quantity > 1) {
-      quantity += shoppingCart[i].quantity - 1;
-    }
+    quantity += shoppingCart[i].quantity;
   }
 
-  shoppingCartAmount.innerHTML = shoppingCart.length + quantity;
+  shoppingCartAmount.innerHTML = quantity;
 }

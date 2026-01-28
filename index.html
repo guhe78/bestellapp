@@ -49,33 +49,18 @@
         </section>
       </section>
     </header>
-    <main>
+    <main class="content">
       <section class="menu_section" id="menu_content"></section>
       <section class="shopping_cart_section">
-        <h2>Your Basket</h2>
-        <section class="menu">
+        <div class="shopping_cart">
+          <h2>Your Basket</h2>
           <div
             class="shopping_items_container"
             id="shopping_items_container"
           ></div>
-        </section>
-        <div class="bill_container" id="bill_container"></div>
-      </section>
-      <dialog
-        class="shopping_cart_dialog"
-        id="shopping_cart_dialog"
-        onclick="onCloseShoppingCart(event)"
-      >
-        <div class="shopping_cart_section_mobile" id="dialog_content_section">
-          <div class="header_mobile">
-            <button class="dialog_close" onclick="dialog.close()">
-              <img src="./assets/icons/close.png" alt="" />
-            </button>
-            <h2>Your Basket</h2>
-          </div>
+          <div class="bill_container" id="bill_container"></div>
         </div>
-        <div class="bill_container_mobile" id="bill_container_mobile"></div>
-      </dialog>
+      </section>
     </main>
     <footer>
       <section class="footer_content">
@@ -102,12 +87,36 @@
           <img
             src="./assets/icons/footer-mobile/basket.png"
             alt="basket symbol little shopping cart"
-            onclick="onOpenShoppingCart()"
-          /><span class="shopping_cart_amount" id="shopping_cart_amount"
-            >0</span
-          >
+            onclick="toggleShoppingCart()"
+          />
+          <p class="shopping_cart_amount" id="shopping_cart_amount">0</p>
         </div>
       </section>
     </footer>
+    <section
+      class="shopping_cart_mobile resp_menu_closed"
+      id="shopping_cart_mobile"
+      onclick="onCloseShoppingCart(event)"
+    >
+      <div class="header_mobile">
+        <button class="dialog_close" onclick="dialog.close()">
+          <img src="./assets/icons/close.png" alt="" />
+        </button>
+        <h2>Your Basket</h2>
+      </div>
+      <div
+        class="shopping_cart_section_mobile"
+        id="dialog_content_section"
+      ></div>
+      <div class="bill_container_mobile" id="bill_container_mobile"></div>
+      <section class="order_confirmed_content">
+        <button class="dialog_close" onclick="dialog.close()">
+          <img src="./assets/icons/close.png" alt="" />
+        </button>
+        <img src="./assets/icons/delivery_truck.png" alt="" />
+        <h2>Order confirmed!</h2>
+        <h3>Your food is in the way!</h3>
+      </section>
+    </section>
   </body>
 </html>
