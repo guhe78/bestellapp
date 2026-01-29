@@ -25,9 +25,13 @@ function getMenuTableTemplate(item) {
                 id="menu_image"
               />
               <div class="menu_item_info">
-                  <h4 class="menu_item_headline">${item.name}</h4
-                  ><h4 class="menu_item_headline menu_price">${item.price.toFixed(2)} €</h4>
-                <td>${item.ingredients}</td>
+              <div  class="menu_item_headline">
+                  <p>${item.name}</>
+                  <p class="menu_price">${item.price.toFixed(2)} €</p>
+                  </div>
+                <td>${item.ingredients.join(", ")}</td>
+                <div class="mobile_only">
+                  <p class="menu_price_mobile">${item.price.toFixed(2)} €</p>
                 <button
                   class="button_addcart"
                   id="add_cart_button"
@@ -35,6 +39,7 @@ function getMenuTableTemplate(item) {
                 >
                   Add to cart
                 </button>
+                </div>
               </div>
             </section>
     `;
@@ -66,7 +71,9 @@ function getMenuTableHeadTemplate(menu) {
           <h2 id="category_headline">${menu.name}</h2>
         </div>
         <a href="#home">
-          <img src="../assets/icons/arrow_upward.png" alt="nach oben gerichteter Pfeil" />
+          <button>
+            <img src="../assets/icons/arrow_upward.png" alt="nach oben gerichteter Pfeil" />
+          </button>
         </a>
       </div>
     </div>

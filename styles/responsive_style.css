@@ -15,6 +15,14 @@
     padding-bottom: 78px;
   }
 
+  .logo_mobile {
+    display: inline;
+  }
+
+  .logo_desktop {
+    display: none;
+  }
+
   .aot_headline {
     display: flex;
     flex-direction: column;
@@ -91,6 +99,68 @@
 }
 
 @media (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+
+  .aot_image {
+    width: 343px;
+    height: 346px;
+    border-radius: 16px;
+
+    margin-top: 150px;
+  }
+
+  .menu_price {
+    display: none;
+  }
+
+  .menu_price_mobile {
+    display: inline;
+  }
+
+  .menu_headline {
+    padding-top: 32px;
+    justify-content: center;
+
+    position: relative;
+
+    scroll-margin-top: 44px;
+  }
+
+  .menu_headline div {
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    bottom: 8px;
+  }
+
+  .menu_headline div img {
+    padding-right: 0;
+    width: 53px;
+    height: 60px;
+  }
+
+  .menu_headline button {
+    position: absolute;
+    right: 9px;
+    top: 9px;
+  }
+
+  .home_arrow:hover {
+    border: 1px solid blue;
+    border-radius: 50%;
+  }
+
   .menu_container {
     flex-direction: column;
     align-items: center;
@@ -100,20 +170,45 @@
     width: 300px;
   }
 
-  .menu_price {
-    bottom: 8px;
-    left: 16px;
+  .mobile_only {
+    justify-content: space-between;
   }
 
   .menu_item_info {
     width: 100%;
     padding-left: 32px;
     padding-right: 32px;
+    gap: 0;
   }
 }
 
 @media (max-width: 400px) {
+  .aot_image {
+    width: 280px;
+    height: 280px;
+  }
+
+  .aot_icon {
+    width: 150px;
+    height: 150px;
+    top: 320px;
+  }
+
   .menu_image {
     width: 230px;
+  }
+
+  .menu_item_info {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .button_addcart {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .footer_content_mobile {
+    padding: 0 20px;
   }
 }

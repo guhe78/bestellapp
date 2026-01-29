@@ -29,6 +29,14 @@
   align-items: center;
 }
 
+.logo_mobile {
+  display: none;
+}
+
+.burger_menu {
+  display: none;
+}
+
 .page_navigation {
   display: flex;
   justify-content: space-around;
@@ -62,11 +70,7 @@
   filter: drop-shadow(4px -4px 2px rgb(100, 65, 0));
 }
 
-.burger_menu {
-  display: none;
-}
-
-.aot_section .aot_icon {
+.aot_icon {
   position: absolute;
   top: 350px;
 }
@@ -149,12 +153,22 @@
   padding: 0;
 }
 
-.menu_headline a:hover {
+.home_arrow:hover {
   filter: brightness(70%);
 }
 
 .menu_headline :first-child {
   display: flex;
+}
+
+.menu_headline button {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid var(--shopping-cart-color);
+}
+
+.menu_headline button:hover {
+  filter: brightness(70%);
 }
 
 .menu_item {
@@ -186,10 +200,13 @@
   justify-content: space-between;
 }
 
-.menu_price {
-  position: absolute;
-  top: 8px;
-  right: 16px;
+.mobile_only {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu_price_mobile {
+  display: none;
 }
 
 .menu_item_info {
@@ -201,7 +218,6 @@
 }
 
 .button_addcart {
-  align-self: flex-end;
   background-color: white;
   font-weight: 600;
   font-size: 16px;
