@@ -10,7 +10,7 @@ function getBillTemplate(price, totalPrice, fee) {
     <h3>
       <span>Total</span> <span>${totalPrice.toFixed(2)} €</span>
     </h3>
-    <button class="buy_now" onclick="orderConfirmed(event)">
+    <button class="buy_now" id="buy_now" onclick="openOrderConfirmed(event)">
       <h3>Buy now (${totalPrice.toFixed(2)} €)</h3>
     </button>`;
 }
@@ -60,9 +60,14 @@ function getShoppingCartTemplate(indexNumber) {
 function getMenuTableHeadTemplate(menu) {
   return `
     <div class="headline_background">
-      <div class="menu_headline">
-        <img src="${menu.categoryIcon}" alt="" />
-        <h2 id="category_headline">${menu.name}</h2>
+      <div class="menu_headline" id="${menu.id}">
+        <div>
+          <img src="${menu.categoryIcon}" alt="" />
+          <h2 id="category_headline">${menu.name}</h2>
+        </div>
+        <a href="#home">
+          <img src="../assets/icons/arrow_upward.png" alt="nach oben gerichteter Pfeil" />
+        </a>
       </div>
     </div>
     <div class="menu_item" id="menu_item_${menu.id}"></div>

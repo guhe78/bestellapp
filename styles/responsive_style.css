@@ -19,6 +19,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    text-align: center;
+  }
+
+  .page_navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation_menu_closed {
+    transform: translateY(-600%);
+  }
+
+  .burger_menu {
+    display: inline;
   }
 
   .menu_section {
@@ -28,20 +43,6 @@
 
   .shopping_cart_section {
     display: none;
-  }
-
-  .shopping_cart_mobile {
-    display: flex;
-    flex-direction: column;
-
-    width: 350px;
-    height: 600px;
-
-    background-color: var(--shopping-cart-color);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transform: all 250ms ease-in-out;
   }
 
   .bill_container_mobile {

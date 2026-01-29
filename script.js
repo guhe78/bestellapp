@@ -1,4 +1,5 @@
-let dialog = document.getElementById("shopping_cart_dialog");
+const shoppingCartDialog = document.getElementById("shopping_cart_mobile");
+const orderConfirmedDialog = document.getElementById("order_confirmed");
 
 function renderMenu() {
   renderMenuTableHead(menu);
@@ -76,52 +77,77 @@ function renderShoppingCart() {
   }
 
   renderBill();
-  getShoppingCartLength();
+  getOrderAmount();
 }
 
 function renderBill() {
   let billContainer = document.getElementById("bill_container");
   let billContainerDialog = document.getElementById("bill_container_mobile");
-
-  let fee = 4.9;
   let price = 0;
   let totalPrice = 0;
 
-  for (let i = 0; i < shoppingCart.length; i++) {
-    price += shoppingCart[i].quantity * shoppingCart[i].price;
-  }
-
-  if (price > 20 || shoppingCart.length == 0) {
-    fee = 0;
-  }
+  price = getOrderPrice();
+  fee = getFee(price);
 
   totalPrice = price + fee;
 
   billContainer.innerHTML = getBillTemplate(price, totalPrice, fee);
   billContainerDialog.innerHTML = getBillTemplate(price, totalPrice, fee);
+
+  getOrderButtonUpdate();
 }
 
-function toggleShoppingCart() {
-  document
-    .getElementById("shopping_cart_mobile")
-    .classList.toggle("resp_menu_closed");
+function openShoppingCart() {
+  shoppingCartDialog.showModal();
+  openCloseDialogsClasses(shoppingCartDialog);
 }
 
-function onCloseShoppingCart(event) {
-  if (event.target == dialog || event.target == button) {
-    dialog.close();
-    document.body.classList.remove("no_scroll");
+function closeShoppingCart() {
+  shoppingCartDialog.close();
+  openCloseDialogsClasses(shoppingCartDialog);
+}
+
+function dialogClick(event) {
+  event.stopPropagation();
+}
+
+function openOrderConfirmed() {
+  if (shoppingCart.length > 0) {
+    orderConfirmedDialog.showModal();
+    openCloseDialogsClasses(orderConfirmedDialog);
   }
 }
 
-function orderConfirmedDialog(event) {
-  let orderConfirmed = document.getElementById("order_confirmed");
-  orderConfirmed.showModal();
-  orderConfirmed.classList.add("opened");
-  onCloseShoppingCart(event);
+function closeOrderConfirmed() {
+  orderConfirmedDialog.close();
+  openCloseDialogsClasses(orderConfirmedDialog);
+  shoppingCart = [];
+  renderShoppingCart();
 }
 
-function getShoppingCartLength() {
+function openCloseDialogsClasses(dialogName) {
+  document.body.classList.toggle("no_scroll");
+  dialogName.classList.toggle("opened");
+}
+
+function toggleNavigationMenu() {
+  document
+    .getElementById("page_navigation")
+    .classList.toggle("navigation_menu_closed");
+}
+
+function getOrderButtonUpdate() {
+  let button = document.getElementById("buy_now");
+  if (shoppingCart.length === 0) {
+    button.disabled = true;
+    button.classList.add("disabled_button");
+  } else {
+    button.disabled = false;
+    button.classList.remove("disabled_button");
+  }
+}
+
+function getOrderAmount() {
   let shoppingCartAmount = document.getElementById("shopping_cart_amount");
   let quantity = 0;
 
@@ -130,4 +156,22 @@ function getShoppingCartLength() {
   }
 
   shoppingCartAmount.innerHTML = quantity;
+}
+
+function getOrderPrice() {
+  let price = 0;
+  for (let i = 0; i < shoppingCart.length; i++) {
+    price += shoppingCart[i].quantity * shoppingCart[i].price;
+  }
+
+  return price;
+}
+
+function getFee(price) {
+  let fee = 4.9;
+  if (price > 20 || shoppingCart.length == 0) {
+    fee = 0;
+  }
+
+  return fee;
 }
