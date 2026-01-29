@@ -3,6 +3,7 @@ const orderConfirmedDialog = document.getElementById("order_confirmed");
 
 function renderMenu() {
   renderMenuTableHead(menu);
+  renderPageNavigation();
   renderBill();
 }
 
@@ -22,6 +23,14 @@ function renderMenuTableHead(menu) {
   for (let i = 0; i < menu.length; i++) {
     menuTable.innerHTML += getMenuTableHeadTemplate(menu[i]);
     renderMenuTable(menu[i]);
+  }
+}
+
+function renderPageNavigation() {
+  let navigation = document.getElementById("page_navigation");
+
+  for (let i = 0; i < menu.length; i++) {
+    navigation.innerHTML += getPageNavigationTemplate(menu[i]);
   }
 }
 
@@ -83,11 +92,9 @@ function renderShoppingCart() {
 function renderBill() {
   let billContainer = document.getElementById("bill_container");
   let billContainerDialog = document.getElementById("bill_container_mobile");
-  let price = 0;
-  let totalPrice = 0;
 
-  price = getOrderPrice();
-  fee = getFee(price);
+  let price = getOrderPrice();
+  let fee = getFee(price);
 
   totalPrice = price + fee;
 

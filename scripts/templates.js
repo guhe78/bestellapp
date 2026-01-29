@@ -80,3 +80,9 @@ function getMenuTableHeadTemplate(menu) {
     <div class="menu_item" id="menu_item_${menu.id}"></div>
     `;
 }
+
+function getPageNavigationTemplate(menu) {
+  return `
+    <a href="#${menu.id}">${menu.name}</a>
+  `;
+}
