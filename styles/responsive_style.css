@@ -223,10 +223,19 @@
   }
 
   .shopping_cart_mobile {
-    width: 320px;
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .buy_now h3 {
+    flex-direction: column;
+    gap: 0;
   }
 
   .footer_content_mobile {
     padding: 0 20px;
   }
+}
+
+@media (max-width: 400px) {
 }

@@ -374,6 +374,11 @@
 h3 {
   display: flex;
   justify-content: space-between;
+  flex-shrink: 1;
+}
+
+.buy_now h3 {
+  gap: 6px;
 }
 
 .buy_now {
