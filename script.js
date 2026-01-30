@@ -32,25 +32,19 @@ function renderPageNavigation() {
 }
 
 function addShoppingCart(menuIndex, itemIndex) {
-  console.log("menuIndex: " + menuIndex + ", itemIndex:" + itemIndex);
+  let shoppingCartItem = {
+    name: menu[menuIndex].items[itemIndex].name,
+    price: menu[menuIndex].items[itemIndex].price,
+    quantity: 1,
+  };
   if (shoppingCart.length === 0) {
-    let quantity = 1;
-    shoppingCart.push({
-      name: menu[menuIndex].items[itemIndex].name,
-      price: menu[menuIndex].items[itemIndex].price,
-      quantity,
-    });
+    shoppingCart.push(shoppingCartItem);
   } else {
     let index = shoppingCart.findIndex(
       (item) => item.name === menu[menuIndex].items[itemIndex].name,
     );
     if (index === -1) {
-      let quantity = 1;
-      shoppingCart.push({
-        name: menu[menuIndex].items[itemIndex].name,
-        price: menu[menuIndex].items[itemIndex].price,
-        quantity,
-      });
+      shoppingCart.push(shoppingCartItem);
     } else {
       increaseQuantity(index);
     }
