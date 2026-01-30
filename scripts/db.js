@@ -1,8 +1,8 @@
-let menu = [
+const menu = [
   {
     id: "burger",
     name: "Burger",
-    categoryIcon: "../assets/images/page_content/burger_section_header.png",
+    categoryIcon: "./assets/images/page_content/burger_section_header.png",
     items: [
       {
         id: "burger_beef_red",
@@ -37,7 +37,7 @@ let menu = [
   {
     id: "pizza",
     name: "Pizza",
-    categoryIcon: "../assets/images/page_content/pizza_section_header.png",
+    categoryIcon: "./assets/images/page_content/pizza_section_header.png",
     items: [
       {
         id: "pizza_margherita",
@@ -72,7 +72,7 @@ let menu = [
   {
     id: "salad",
     name: "Salat",
-    categoryIcon: "../assets/images/page_content/salad_section_header.png",
+    categoryIcon: "./assets/images/page_content/salad_section_header.png",
     items: [
       {
         id: "salad_rote_beete",
@@ -107,7 +107,7 @@ let menu = [
   {
     id: "sidedishes",
     name: "Beilagen",
-    categoryIcon: "../assets/images/page_content/burger_section_header.png",
+    categoryIcon: "./assets/images/page_content/burger_section_header.png",
     items: [
       {
         id: "sidedishes_fries",
@@ -135,7 +135,7 @@ let menu = [
   {
     id: "softdrinks",
     name: "Getränke",
-    categoryIcon: "../assets/images/page_content/burger_section_header.png",
+    categoryIcon: "./assets/images/page_content/burger_section_header.png",
     items: [
       {
         id: "softdrinks_cola",
@@ -163,7 +163,7 @@ let menu = [
   {
     id: "deserts",
     name: "Etwas Süßes",
-    categoryIcon: "../assets/images/page_content/burger_section_header.png",
+    categoryIcon: "./assets/images/page_content/burger_section_header.png",
     items: [
       {
         id: "deserts_chocolate_icecream",

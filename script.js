@@ -2,27 +2,24 @@ const shoppingCartDialog = document.getElementById("shopping_cart_mobile");
 const orderConfirmedDialog = document.getElementById("order_confirmed");
 
 function renderMenu() {
-  renderMenuTableHead(menu);
+  renderMenuTableHead();
   renderPageNavigation();
   renderBill();
 }
 
-function renderMenuTable(category) {
-  let menuItem = document.getElementById("menu_item_" + category.id);
-
-  for (let i = 0; i < category.items.length; i++) {
-    let item = category.items[i];
-
-    menuItem.innerHTML += getMenuTableTemplate(item);
+function renderMenuTable(index) {
+  let menuItem = document.getElementById("menu_item_" + menu[index].id);
+  for (let i = 0; i < menu[index].items.length; i++) {
+    menuItem.innerHTML += getMenuTableTemplate(index, i);
   }
 }
 
-function renderMenuTableHead(menu) {
+function renderMenuTableHead() {
   let menuTable = document.getElementById("menu_content");
 
   for (let i = 0; i < menu.length; i++) {
-    menuTable.innerHTML += getMenuTableHeadTemplate(menu[i]);
-    renderMenuTable(menu[i]);
+    menuTable.innerHTML += getMenuTableHeadTemplate(i);
+    renderMenuTable(i);
   }
 }
 
@@ -30,19 +27,30 @@ function renderPageNavigation() {
   let navigation = document.getElementById("page_navigation");
 
   for (let i = 0; i < menu.length; i++) {
-    navigation.innerHTML += getPageNavigationTemplate(menu[i]);
+    navigation.innerHTML += getPageNavigationTemplate(i);
   }
 }
 
-function addShoppingCart(menu) {
+function addShoppingCart(menuIndex, itemIndex) {
+  console.log("menuIndex: " + menuIndex + ", itemIndex:" + itemIndex);
   if (shoppingCart.length === 0) {
     let quantity = 1;
-    shoppingCart.push({ name: menu.name, price: menu.price, quantity });
+    shoppingCart.push({
+      name: menu[menuIndex].items[itemIndex].name,
+      price: menu[menuIndex].items[itemIndex].price,
+      quantity,
+    });
   } else {
-    let index = shoppingCart.findIndex((item) => item.name === menu.name);
+    let index = shoppingCart.findIndex(
+      (item) => item.name === menu[menuIndex].items[itemIndex].name,
+    );
     if (index === -1) {
       let quantity = 1;
-      shoppingCart.push({ name: menu.name, price: menu.price, quantity });
+      shoppingCart.push({
+        name: menu[menuIndex].items[itemIndex].name,
+        price: menu[menuIndex].items[itemIndex].price,
+        quantity,
+      });
     } else {
       increaseQuantity(index);
     }

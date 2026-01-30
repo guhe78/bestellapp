@@ -5,6 +5,10 @@
   .headline {
     padding: 0 32px;
   }
+
+  .headline_background {
+    max-width: 1440px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -42,6 +46,10 @@
 
   .burger_menu {
     display: inline;
+  }
+
+  .headline_background {
+    width: 100%;
   }
 
   .menu_section {
@@ -133,15 +141,14 @@
 
     position: relative;
 
+    margin-top: -100px;
+
     scroll-margin-top: 44px;
   }
 
   .menu_headline div {
     flex-direction: column;
     align-items: center;
-
-    position: absolute;
-    bottom: 8px;
   }
 
   .menu_headline div img {
@@ -150,15 +157,10 @@
     height: 60px;
   }
 
-  .menu_headline button {
+  .menu_headline a {
     position: absolute;
-    right: 9px;
-    top: 9px;
-  }
-
-  .home_arrow:hover {
-    border: 1px solid blue;
-    border-radius: 50%;
+    right: 24px;
+    top: 50px;
   }
 
   .menu_container {

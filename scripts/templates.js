@@ -15,27 +15,27 @@ function getBillTemplate(price, totalPrice, fee) {
     </button>`;
 }
 
-function getMenuTableTemplate(item) {
+function getMenuTableTemplate(menuIndex, itemIndex) {
   return `
     <section class="menu_container">
               <img
-                src="${item.imageUrl}"
+                src="${menu[menuIndex].items[itemIndex].imageUrl}"
                 alt=""
                 class="menu_image"
                 id="menu_image"
               />
               <div class="menu_item_info">
               <div  class="menu_item_headline">
-                  <p>${item.name}</>
-                  <p class="menu_price">${item.price.toFixed(2)} €</p>
+                  <p>${menu[menuIndex].items[itemIndex].name}</>
+                  <p class="menu_price">${menu[menuIndex].items[itemIndex].price.toFixed(2)} €</p>
                   </div>
-                <td>${item.ingredients.join(", ")}</td>
+                <td>${menu[menuIndex].items[itemIndex].ingredients.join(", ")}</td>
                 <div class="mobile_only">
-                  <p class="menu_price_mobile">${item.price.toFixed(2)} €</p>
+                  <p class="menu_price_mobile">${menu[menuIndex].items[itemIndex].price.toFixed(2)} €</p>
                 <button
                   class="button_addcart"
                   id="add_cart_button"
-                  onclick='addShoppingCart(${JSON.stringify(item)})'
+                  onclick='addShoppingCart(${menuIndex}, ${itemIndex})'
                 >
                   Add to cart
                 </button>
@@ -62,27 +62,24 @@ function getShoppingCartTemplate(indexNumber) {
     `;
 }
 
-function getMenuTableHeadTemplate(menu) {
+function getMenuTableHeadTemplate(index) {
   return `
-    <div class="headline_background">
-      <div class="menu_headline" id="${menu.id}">
-        <div>
-          <img src="${menu.categoryIcon}" alt="" />
-          <h2 id="category_headline">${menu.name}</h2>
-        </div>
-        <a href="#home">
-          <button>
-            <img src="../assets/icons/arrow_upward.png" alt="nach oben gerichteter Pfeil" />
-          </button>
-        </a>
-      </div>
+    <div class="headline_background"></div>
+    <div class="menu_headline" id="${menu[index].id}">
+      <div>
+        <img src="${menu[index].categoryIcon}" alt="" />
+        <h2 id="category_headline">${menu[index].name}</h2>
+      </div>    
+        <a href="#home" >
+          <img src="./assets/icons/arrow_upward.png" alt="nach oben gerichteter Pfeil" class="home_arrow" />
+        </a>    
     </div>
-    <div class="menu_item" id="menu_item_${menu.id}"></div>
+    <div class="menu_item" id="menu_item_${menu[index].id}"></div>
     `;
 }
 
-function getPageNavigationTemplate(menu) {
+function getPageNavigationTemplate(index) {
   return `
-    <a href="#${menu.id}">${menu.name}</a>
+    <a href="#${menu[index].id}">${menu[index].name}</a>
   `;
 }

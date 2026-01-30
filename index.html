@@ -18,20 +18,18 @@
   </head>
   <body onload="renderMenu()">
     <header>
-      <section class="aot_section">
+      <section class="aot_section" id="home">
         <div class="header_background">
           <div class="headline">
             <img
               src="./assets/icons/bestell_app_logo_1.png"
               alt="Logo der App BestellApp die beiden l sind ein Messer und eine Gabel"
               class="logo_desktop"
-              id="home"
             />
             <img
               src="./assets/icons/bestell_app_logo_2.png"
               alt="Logo der App BestellApp"
               class="logo_mobile"
-              id="home"
             />
             <img
               src="./assets/icons/menu.png"
@@ -53,13 +51,14 @@
           class="aot_icon"
         />
         <section class="aot_headline">
-          <h1>
-            <span>Burger</span><span>Bude</span>
-            <img
-              src="./assets/images/page_content/tripadvisor_fake.png"
-              alt=""
-            />
-          </h1>
+          <div class="aot_headline_wrapper">
+            <h1><span>Burger</span><span>Bude</span></h1>
+            <div class="tripadvisor_rating">
+              <img src="./assets/icons/star.png" alt="" />
+              <p>4,1</p>
+              <span>(317)</span>
+            </div>
+          </div>
           <p>The best Burgers, Pizzas and Greens, all in one great place.</p>
         </section>
       </section>
